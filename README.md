@@ -1,8 +1,7 @@
 # HW on kubernetes monitoring
 Simple documentation for setting up monitoring kubernetes and achieving our goals <br>
 _**This documentation is designed for Ubuntu Linux 22.04**_
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
+# Table of Contents
 ## Prerequisite - VM machine requirements
 Minimal <br> 
 * 2 CPUs or more<br>
@@ -130,3 +129,45 @@ Open a new terminal and enter the following code to access user:admin password: 
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 ```
 Copy the password, go back to your browser and enter it as password <br>
+### Prometheus
+Install Helm: <br>
+```
+sudo apt-get install helm --classic
+```
+Download Prometheus: <br>
+```
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+```
+```
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+```
+Install Promettheus: <br>
+```
+helm install prometheus prometheus-community/prometheus
+```
+Create a new service using nodeport: <br>
+```
+kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-new
+```
+Access promethus gui: <br>
+```
+minikube service prometheus-server-new
+```
+Install grafana in a new terminal: <br>
+```
+helm install grafana grafana/grafana
+```
+Create a new service with nodeport: <br>
+```
+kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana-new
+```
+Access grafana dashboard: <br>
+```
+minikube service grafana-new
+```
+Open new terminal to acquire password for Grafana: <br>
+```
+kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
+Login with ***admin*** user and acquired password <br>
