@@ -103,3 +103,28 @@ minikube start --driver=docker
 ```
 minikube dashboard
 ```
+### ArgoCD on to Minikube
+Open new terminal <br>
+Create a namespace for argocd: <br>
+```
+kubectl create ns argocd
+```
+Apply ArgoCD manifest installation file from ArgoCD github repository: <br>
+```
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/v2.5.8/manifests/install.yaml
+```
+Verify the installation: <br>
+```
+kubectl get all -n argocd
+```
+### Accessing ArgoCD's interface
+Do a port forwarding: <br>
+```
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+Go to a browser and open localhost:8080 - username !!!Always ***admin***!!!<br>
+Open a new terminal and enter the following code to access user:admin password: <br>
+```
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
+```
+Copy the password, go back to your browser and enter it as password <br>
