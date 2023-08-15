@@ -24,11 +24,32 @@ Recommended <br>
 ### Docker
 Docker will be first thing that we will be installing. <br>
 Open Linux terminal and copy/type following commands: <br>
-First, update your existing list of packages: <br>
+Update your existing list of packages: <br>
 ```
-$ sudo apt update
+sudo apt update
 ```
 Next, install a few prerequisite packages which let apt use packages over HTTPS: <br>
 ```
-$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
+Then add the GPG key for the official Docker repository to your system: <br>
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+Add the Docker repository to APT sources: <br>
+```
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+```
+Install Docker: <br>
+```
+sudo apt install docker-ce
+```
+Check that it’s running <br>
+```
+sudo systemctl status docker
+```
+(Optional) Reboot (just in case) <br>
+```
+sudo reboot
+```
+### Kubectl
