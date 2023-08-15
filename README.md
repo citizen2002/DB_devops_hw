@@ -23,6 +23,12 @@ Recommended <br>
 ## Project deployment / installation
 ### Docker
 Docker will be first thing that we will be installing. <br>
-Open Linux terminal and type following commands: <br>
-```$ sudo apt update``` <br>
-```$ sudo apt install apt-transport-https ca-certificates curl software-properties-common```
+Open Linux terminal and copy/type following commands: <br>
+First, update your existing list of packages: <br>
+```
+$ sudo apt update
+```
+Next, install a few prerequisite packages which let apt use packages over HTTPS: <br>
+```
+$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
+```
