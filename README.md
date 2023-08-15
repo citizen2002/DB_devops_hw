@@ -1,6 +1,6 @@
 # HW on kubernetes monitoring
 Simple documentation for setting up monitoring kubernetes and achieving our goals <br>
-**This documentation is designed for Ubuntu Linux 22.04**
+_**This documentation is designed for Ubuntu Linux 22.04**_
 ## Prerequisite - VM machine requirements
 Minimal <br> 
 * 2 CPUs or more<br>
