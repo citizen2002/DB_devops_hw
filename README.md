@@ -13,12 +13,12 @@ Recommended <br>
 * 30GB of free disk space<br>
 
 ## Technologies that we will be using
-[Docker](https://docs.docker.com/engine/install/ubuntu/ "Docker main") <br>
+[Docker](https://docs.docker.com/engine/install/ubuntu/ "Docker main") - as a driver for minikube <br>
 [Kubectl](https://kubernetes.io/docs/tasks/tools/ "Kubectl main") <br>
-[Minikube](https://minikube.sigs.k8s.io/docs/start/ "Minikube main") <br>
-[ArgoCD](https://argo-cd.readthedocs.io/en/stable/getting_started/ "ArgoCD main") <br>
-[Prometheus](https://prometheus.io/docs/prometheus/latest/installation/ "Prometheus main") <br>
-[Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/ "Grafana main") <br>
+[Minikube](https://minikube.sigs.k8s.io/docs/start/ "Minikube main") - to control kubernetes clusters <br>
+[ArgoCD](https://argo-cd.readthedocs.io/en/stable/getting_started/ "ArgoCD main") - for automation <br>
+[Prometheus](https://prometheus.io/docs/prometheus/latest/installation/ "Prometheus main") - for monitoring<br>
+[Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/ "Grafana main") - for monitoring<br>
 
 ## Project deployment / installation
 ### Docker
@@ -71,3 +71,7 @@ Check that it is running: <br>
 ```
 kubectl version
 ```
+### Minikube
+Up next - Minikube. <br>
+Open Linux terminal and copy/type following commands: <br>
+Download the Kubectl binary: <br>
