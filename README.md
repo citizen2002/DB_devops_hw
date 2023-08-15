@@ -142,7 +142,7 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
 ```
-Install Promettheus: <br>
+Install Prometheus: <br>
 ```
 helm install prometheus prometheus-community/prometheus
 ```
@@ -171,3 +171,6 @@ Open new terminal to acquire password for Grafana: <br>
 kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 Login with ***admin*** user and acquired password <br>
+
+CONGRATULATIONS ON A SUCCESSFULL INSTALATION, IT IS TIME TO CONFIGURE EVERYTHING <br>
+## Configuration
