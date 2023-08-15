@@ -1,6 +1,8 @@
 # HW on kubernetes monitoring
 Simple documentation for setting up monitoring kubernetes and achieving our goals <br>
 _**This documentation is designed for Ubuntu Linux 22.04**_
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 ## Prerequisite - VM machine requirements
 Minimal <br> 
 * 2 CPUs or more<br>
