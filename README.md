@@ -19,3 +19,11 @@ Recommended <br>
 [ArgoCD](https://argo-cd.readthedocs.io/en/stable/getting_started/ "ArgoCD main") <br>
 [Prometheus](https://prometheus.io/docs/prometheus/latest/installation/ "Prometheus main") <br>
 [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/ "Grafana main") <br>
+
+## Project deployment / installation
+### Docker
+Docker will be first thing that we will be installing. <br>
+Open Linux terminal and type following commands: <br>
+'''
+$ sudo apt update
+'''
