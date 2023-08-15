@@ -24,7 +24,5 @@ Recommended <br>
 ### Docker
 Docker will be first thing that we will be installing. <br>
 Open Linux terminal and type following commands: <br>
-```
-$ sudo apt update
-$ sudo apt install apt-transport-https ca-certificates curl software-properties-common
-```
+```$ sudo apt update```
+```$ sudo apt install apt-transport-https ca-certificates curl software-properties-common```
