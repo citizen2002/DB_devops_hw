@@ -44,12 +44,30 @@ Install Docker: <br>
 ```
 sudo apt install docker-ce
 ```
-Check that it’s running <br>
+Check that it’s running: <br>
 ```
 sudo systemctl status docker
 ```
-(Optional) Reboot (just in case) <br>
+(Optional) Reboot (just in case): <br>
 ```
 sudo reboot
 ```
 ### Kubectl
+Up next - Kubectl. <br>
+Open Linux terminal and copy/type following commands: <br>
+Download the Kubectl binary: <br>
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+```
+Make the Kubectl binary executable: <br>
+```
+chmod +x kubectl
+```
+Move Kubectl binary to PATH: <br>
+```
+sudo mv kubectl /usr/local/bin
+```
+Check that it is running: <br>
+```
+kubectl version
+```
