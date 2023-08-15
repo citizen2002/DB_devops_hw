@@ -2,11 +2,13 @@
 Simple documentation for setting up monitoring kubernetes and achieving our goals <br>
 **This documentation is designed for Ubuntu Linux 22.04**
 ## Prerequisite - VM machine requirements
-Minimal <br> * 2 CPUs or more<br>
+Minimal <br> 
+* 2 CPUs or more<br>
 * 2GB of free memory<br>
 * 20GB of free disk space<br>
 
-Recommended <br> * 4 CPUs or more<br>
+Recommended <br> 
+* 4 CPUs or more<br>
 * 8GB of free memory<br>
 * 30GB of free disk space<br>
 
