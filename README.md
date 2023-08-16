@@ -6,7 +6,19 @@ Simple documentation for setting up monitoring kubernetes and achieving our goal
 + [Prerequisite - VM machine requirements](https://github.com/citizen2002/DB_devops_hw#prerequisite---vm-machine-requirements)
 + [Technologies that we will be using](https://github.com/citizen2002/DB_devops_hw#technologies-that-we-will-be-using)
 1. [Project installation (skip this part if you have technologies already installed)](https://github.com/citizen2002/DB_devops_hw#project-installation-skip-this-part-if-you-have-technologies-already-installed)
+    + [Docker](https://github.com/citizen2002/DB_devops_hw#docker)
+    + [Minikube](https://github.com/citizen2002/DB_devops_hw#minikube)
+    + [ArgoCD on to Minikube](https://github.com/citizen2002/DB_devops_hw#argocd-on-to-minikube)
+    + [Accessing ArgoCD's interface](https://github.com/citizen2002/DB_devops_hw#accessing-argocds-interface)
+    + [Prometheus](https://github.com/citizen2002/DB_devops_hw#prometheus)
 2. [Project deployment](https://github.com/citizen2002/DB_devops_hw#project-deployment)
+    + [Minikube cluster deployment](https://github.com/citizen2002/DB_devops_hw#minikube-cluster-deployment)
+        + [Minikube stress test (manual)](https://github.com/citizen2002/DB_devops_hw#minikube-stress-test-manual)
+    + [Github to ArgoCD automation stack](https://github.com/citizen2002/DB_devops_hw#github-to-argocd-automation-stack)
+    + [Prometheus monitoring](https://github.com/citizen2002/DB_devops_hw#prometheus-monitoring)
+        + [Prometheus high CPU alert](https://github.com/citizen2002/DB_devops_hw#prometheus-high-cpu-alert)
+    + [Grafana monitoring](https://github.com/citizen2002/DB_devops_hw#grafana-monitoring)
+        + [Telegram alert via Telepush](https://github.com/citizen2002/DB_devops_hw#telegram-alert-via-telepush)
 3. [Endword/conclusion](https://github.com/citizen2002/DB_devops_hw#endwordconclusion)
 ## Prerequisite - VM machine requirements
 Minimal <br> 
@@ -256,5 +268,5 @@ curl -X POST http://localhost:9093/-/reload
 (Optional) - ***Configure prometheus.yml***, ***custom_alerts.yml*** and ***blackbox.yml*** in the lines with the comments <br>
 
 # Endword/conclusion
-Even though some of my ideas and implementations didn't work out the way i wanted them to I have really enjoyed this challenge. I went all in into it and it helped me understand where are my knowledge/practical gaps and as well learned many new devops tools. I blame my high confidence thinking that this project would've been much easier and starting it much later than I really should have.<br>
+Even though some of my ideas and implementations didn't work out the way i wanted them to I have really enjoyed this challenge. I went all in into it and it helped me understand where are my knowledge/practical gaps and as well learned many new devops tools. I blame my high confidence thinking that this project would've been much easier and starting it much later than I really should have. And my apologies for the messy commiting, I was trying to remember READ.md formatting and perfect this documentation to the notch.<br>
 ***THANK YOU***
