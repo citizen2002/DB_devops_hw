@@ -268,5 +268,5 @@ curl -X POST http://localhost:9093/-/reload
 (Optional) - ***Configure prometheus.yml***, ***custom_alerts.yml*** and ***blackbox.yml*** in the lines with the comments <br>
 
 # Endword/conclusion
-Even though some of my ideas and implementations didn't work out the way i wanted them to I have really enjoyed this challenge. I went all in into it and it helped me understand where are my knowledge/practical gaps and as well learned many new devops tools. I blame my high confidence thinking that this project would've been much easier and starting it much later than I really should have. And my apologies for the messy commiting, I was trying to remember READ.md formatting and perfect this documentation to the notch.<br>
+Even though some of my ideas and implementations didn't work out the way i wanted them to I have really enjoyed this challenge. I went all in into it and it helped me understand where are my knowledge/practical gaps and as well learned many new devops tools. I blame my high confidence thinking that this project would've been much easier and starting it much later than I really should have. And my apologies for the messy commiting, I was trying to remember READ.md formatting and perfect this documentation to the notch.<br><br>
 ***THANK YOU***
