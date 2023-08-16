@@ -1,6 +1,6 @@
 # HW on kubernetes monitoring
 Simple documentation for setting up monitoring kubernetes and achieving our goals <br>
-**This documentation is designed for Ubuntu Linux 22.04**<br>
+**This documentation is designed for Ubuntu Linux 22.04**<br><br>
 **This repository will be automatically closed after 2 weeks to prevent leak of this HW**
 # Table of Contents
 + [Prerequisite - VM machine requirements](https://github.com/citizen2002/DB_devops_hw#prerequisite---vm-machine-requirements)
