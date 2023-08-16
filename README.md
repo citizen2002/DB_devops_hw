@@ -167,8 +167,8 @@ Open new terminal to acquire password for Grafana: <br>
 kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 Login with ***admin*** user and acquired password <br>
-## Project deployment
-### Minikube cluster deployment
+# Project deployment
+## Minikube cluster deployment
 Set up deployment: <br>
 ```
 kubectl apply -f devops-hw.yaml
@@ -182,9 +182,26 @@ Access the application: <br>
 ```
 minikube service devops-hw --url
 ```
-### Github to ArgoCD automation stack
+### Minikube stress test (manual)
+Enable a Metrics Server: <br>
+```
+minikube addons enable metrics-server
+```
+Autoscale deployment for CPU: <br>
+```
+kubectl autoscale deployment devops-hw --cpu-percent=90 --min=1 --max=4
+```
+Deploy this YAML file: <br>
+```
+kubectl apply -f nuke.yml
+```
+Execute container (somewhere here, I think, I made a mistake): <br>
+```
+kubectl exec -it devops sh
+```
+## Github to ArgoCD automation stack
 Connect ArgoCD to [current](https://github.com/citizen2002/DB_devops_hw) repository via HTTPS (recommended) or SSH methods following [this](https://argo-cd.readthedocs.io/en/stable/user-guide/private-repositories/) tutorial (first 3 paragraphs) <br>
-### Prometheus monitoring
+## Prometheus monitoring
 Connect to Prometheus dashboard. <br>
 Create a new namespace: <br>
 ```
@@ -202,7 +219,7 @@ Create a deployment on monitoring namespace: <br>
 ```
 kubectl create  -f prometheus-deployment.yaml 
 ```
-### Grafana monitoring
+## Grafana monitoring
 Create a namespace: <br>
 ```
 kubectl create namespace my-grafana
@@ -215,3 +232,13 @@ Access it by exposing Grafana IP: <br>
 ```
 minikube service grafana --namespace=my-grafana
 ```
+### Grafana high CPU alert
+Create a namespace: <br>
+```
+kubectl create namespace my-alert
+```
+Send alert.yaml to server: <br>
+```
+kubectl apply -f alert.yaml --namespace=my-alert
+```
+### Telegram alert

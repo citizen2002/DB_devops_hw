@@ -1,0 +1,8 @@
+- alert: HostHighCpuLoad
+  expr: avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[1m]) * 100) > 90
+  for: 1m
+  labels:
+    severity: warning
+  annotations:
+    summary: "High usage on {{ $labels.instance }}"
+    description: "{{ $labels.instance }} has a high CPU usage (current value: {{ $value }}s)" 
