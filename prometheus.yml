@@ -1,0 +1,28 @@
+# alerttele
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+       - "localhost:9093"                   # address of your alert service
+
+# Load custom rules rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  - "custom_alerts.yml"
+
+# Scrape configs
+scrape_configs:
+  - job_name: 'blackbox-demo'               # choose a name
+    metrics_path: /probe
+    scrape_timeout: 10s
+    params:
+      module: [https_2xx]                   # check for http success response
+    static_configs:
+      - targets:
+        - 'http://localhost:4000'           # add your target url to watch
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: '127.0.0.1:9101'       # address of your blackbox exporter

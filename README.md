@@ -219,6 +219,15 @@ Create a deployment on monitoring namespace: <br>
 ```
 kubectl create  -f prometheus-deployment.yaml 
 ```
+### Prometheus high CPU alert
+Create a namespace: <br>
+```
+kubectl create namespace my-alert
+```
+Send alert.yaml to server: <br>
+```
+kubectl apply -f alert.yaml --namespace=my-alert
+```
 ## Grafana monitoring
 Create a namespace: <br>
 ```
@@ -232,13 +241,13 @@ Access it by exposing Grafana IP: <br>
 ```
 minikube service grafana --namespace=my-grafana
 ```
-### Grafana high CPU alert
-Create a namespace: <br>
+### Telegram alert via Telepush
+Obtain your own [Telepush](https://telepush.dev/) token by clicking on "Telepush" <br>
+Configure ***alerttele.yml*** by inserting your token in 13th code line <br>
+Apply the configuration: <br>
 ```
-kubectl create namespace my-alert
+curl -X POST http://localhost:9093/-/reload
 ```
-Send alert.yaml to server: <br>
-```
-kubectl apply -f alert.yaml --namespace=my-alert
-```
-### Telegram alert
+(Optional) - ***Configure prometheus.yml***, ***custom_alerts.yml*** and ***blackbox.yml*** in the lines with the comments <br>
+
+# Endword/conclusion
