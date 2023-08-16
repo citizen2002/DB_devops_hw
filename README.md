@@ -3,6 +3,8 @@ Simple documentation for setting up monitoring kubernetes and achieving our goal
 **This documentation is designed for Ubuntu Linux 22.04**<br>
 **This repository will be automatically closed after 2 weeks to prevent leak of this HW**
 # Table of Contents
++ [Prerequisite - VM machine requirements](https://github.com/citizen2002/DB_devops_hw#prerequisite---vm-machine-requirements)
++ [Technologies that we will be using](https://github.com/citizen2002/DB_devops_hw#technologies-that-we-will-be-using)
 1. [Project installation (skip this part if you have technologies already installed)](https://github.com/citizen2002/DB_devops_hw#project-installation-skip-this-part-if-you-have-technologies-already-installed)
 2. [Project deployment](https://github.com/citizen2002/DB_devops_hw#project-deployment)
 3. [Endword/conclusion](https://github.com/citizen2002/DB_devops_hw#endwordconclusion)
