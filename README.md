@@ -1,7 +1,11 @@
 # HW on kubernetes monitoring
 Simple documentation for setting up monitoring kubernetes and achieving our goals <br>
-_**This documentation is designed for Ubuntu Linux 22.04**_
+**This documentation is designed for Ubuntu Linux 22.04**<br>
+**This repository will be automatically closed after 2 weeks to prevent leak of this HW**
 # Table of Contents
+1. [Project installation (skip this part if you have technologies already installed)](https://github.com/citizen2002/DB_devops_hw#project-installation-skip-this-part-if-you-have-technologies-already-installed)
+2. [Project deployment](https://github.com/citizen2002/DB_devops_hw#project-deployment)
+3. [Endword/conclusion](https://github.com/citizen2002/DB_devops_hw#endwordconclusion)
 ## Prerequisite - VM machine requirements
 Minimal <br> 
 * 2 CPUs or more<br>
@@ -21,8 +25,8 @@ Recommended <br>
 [Prometheus](https://prometheus.io/docs/prometheus/latest/installation/ "Prometheus main") - for monitoring<br>
 [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/ "Grafana main") - for monitoring<br>
 
-## Project installation (skip this part if you have technologies already installed)
-### Docker
+# Project installation (skip this part if you have technologies already installed)
+## Docker
 Docker will be first thing that we will be installing. <br>
 Open Linux terminal and copy/type following commands: <br>
 Update your existing list of packages: <br>
@@ -49,7 +53,7 @@ Check that it’s running: <br>
 ```
 sudo systemctl status docker
 ```
-### Kubectl
+## Kubectl
 Up next - Kubectl. <br>
 Open Linux terminal and copy/type following commands: <br>
 Download latest version of kubectl: <br>
@@ -68,7 +72,7 @@ Check that it is running: <br>
 ```
 kubectl version -o yaml
 ```
-### Minikube
+## Minikube
 Up next - Minikube. <br>
 Open Linux terminal and copy/type following commands: <br>
 Apply all updates of existing packages of your system by executing the following apt commands: <br>
@@ -100,7 +104,7 @@ minikube start --driver=docker
 ```
 minikube dashboard
 ```
-### ArgoCD on to Minikube
+## ArgoCD on to Minikube
 Open new terminal <br>
 Create a namespace for argocd: <br>
 ```
@@ -114,7 +118,7 @@ Verify the installation: <br>
 ```
 kubectl get all -n argocd
 ```
-### Accessing ArgoCD's interface
+## Accessing ArgoCD's interface
 Do a port forwarding: <br>
 ```
 kubectl port-forward svc/argocd-server -n argocd 8080:443
@@ -125,7 +129,7 @@ Open a new terminal and enter the following code to access user:admin password: 
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 ```
 Copy the password, go back to your browser and enter it as password <br>
-### Prometheus
+## Prometheus
 Install Helm: <br>
 ```
 sudo apt-get install helm --classic
@@ -172,7 +176,6 @@ Login with ***admin*** user and acquired password <br>
 Set up deployment: <br>
 ```
 kubectl apply -f devops-hw.yaml
-
 ```
 Create service: <br>
 ```
@@ -251,3 +254,5 @@ curl -X POST http://localhost:9093/-/reload
 (Optional) - ***Configure prometheus.yml***, ***custom_alerts.yml*** and ***blackbox.yml*** in the lines with the comments <br>
 
 # Endword/conclusion
+Even though some of my ideas and implementations didn't work out the way i wanted them to I have really enjoyed this challenge. I went all in into it and it helped me understand where are my knowledge/practical gaps and as well learned many new devops tools. I blame my high confidence thinking that this project would've been much easier and starting it much later than I really should have.<br>
+***THANK YOU***
