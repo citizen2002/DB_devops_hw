@@ -21,7 +21,7 @@ Recommended <br>
 [Prometheus](https://prometheus.io/docs/prometheus/latest/installation/ "Prometheus main") - for monitoring<br>
 [Grafana](https://grafana.com/docs/grafana/latest/setup-grafana/installation/ "Grafana main") - for monitoring<br>
 
-## Project deployment / installation
+## Project installation (skip this part if you have technologies already installed)
 ### Docker
 Docker will be first thing that we will be installing. <br>
 Open Linux terminal and copy/type following commands: <br>
@@ -48,10 +48,6 @@ sudo apt install docker-ce
 Check that it’s running: <br>
 ```
 sudo systemctl status docker
-```
-(Optional) Reboot (just in case): <br>
-```
-sudo reboot
 ```
 ### Kubectl
 Up next - Kubectl. <br>
@@ -171,6 +167,51 @@ Open new terminal to acquire password for Grafana: <br>
 kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 Login with ***admin*** user and acquired password <br>
+## Project deployment
+### Minikube cluster deployment
+Set up deployment: <br>
+```
+kubectl apply -f devops-hw.yaml
 
-CONGRATULATIONS ON A SUCCESSFULL INSTALATION, IT IS TIME TO CONFIGURE EVERYTHING <br>
-## Configuration
+```
+Create service: <br>
+```
+kubectl apply -f devops-hw-service.yaml
+```
+Access the application: <br>
+```
+minikube service devops-hw --url
+```
+### Github to ArgoCD automation stack
+Connect ArgoCD to [current](https://github.com/citizen2002/DB_devops_hw) repository via HTTPS (recommended) or SSH methods following [this](https://argo-cd.readthedocs.io/en/stable/user-guide/private-repositories/) tutorial (first 3 paragraphs) <br>
+### Prometheus monitoring
+Connect to Prometheus dashboard. <br>
+Create a new namespace: <br>
+```
+kubectl create namespace monitoring
+```
+Create role: <br>
+```
+kubectl create -f clusterRole.yaml
+```
+Create the config map in Kubernetes: <br>
+```
+kubectl create -f config-map.yaml
+```
+Create a deployment on monitoring namespace: <br>
+```
+kubectl create  -f prometheus-deployment.yaml 
+```
+### Grafana monitoring
+Create a namespace: <br>
+```
+kubectl create namespace my-grafana
+```
+Send grafana.yaml to server: <br>
+```
+kubectl apply -f grafana.yaml --namespace=my-grafana
+```
+Access it by exposing Grafana IP: <br>
+```
+minikube service grafana --namespace=my-grafana
+```

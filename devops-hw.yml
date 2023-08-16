@@ -1,0 +1,21 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+name: devops-hw
+labels: 
+app: devops-hw
+spec: 
+replicas: 1 
+selector: 
+matchLabels: 
+app: devops-hw
+template: 
+metadata: 
+labels: 
+app: devops-hw
+spec: 
+containers: 
+- name: devops-hw
+image: devops:1.28
+ports: 
+- containerPort: 8080
